@@ -9,3 +9,10 @@ mongoose.connect('mongodb+srv://PanicLobster:PanicLobster@letappcluster-f3nje.gc
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
+app.get('/', function(req, res){
+    res.render('landing');
+});
+
+app.listen(3000, 'localhost', function(){
+    console.log('Server Started');
+});
