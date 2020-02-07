@@ -1,0 +1,16 @@
+<%- include ('partials/header') %> 
+
+<h1>Landing Page!</h1>
+
+<form action="/registrations/new" method="POST">
+    <input type="text" name="name" placeholder="Ex: John Smith">
+    <input type="email" name="email" placeholder="Ex: john.smith@paniclobster.com">
+    <input type="date" name="birthdate">
+    <input type="number" name="CPF">
+    <input type="text" name="state">
+    <input type="text" name="city">
+    <input type="text" name="github">
+    <button>Save</button>
+</form>
+
+<%- include('partials/footer') %> 
