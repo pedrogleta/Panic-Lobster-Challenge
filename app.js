@@ -7,6 +7,7 @@ mongoose.connect('mongodb+srv://PanicLobster:PanicLobster@letappcluster-f3nje.gc
 {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use('/static', express.static('./static/'));
 app.set('view engine', 'ejs');
 
 var City = require('./models/city');
