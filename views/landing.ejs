@@ -3,12 +3,26 @@
 <h1>Landing Page!</h1>
 
 <form action="/registrations/new" method="POST">
-    <input type="text" name="name" placeholder="Ex: John Smith">
+    <label>
+        Name
+        <input type="text" name="name" placeholder="Ex: John Smith">
+    </label>
+    
     <input type="email" name="email" placeholder="Ex: john.smith@paniclobster.com">
     <input type="date" name="birthdate">
     <input type="number" name="CPF">
-    <input type="text" name="state">
-    <input type="text" name="city">
+    <select name="state" class="form-control">
+        <option>Paraná</option>
+        <option>Rio de Janeiro</option>
+        <option>Ceará</option>
+        <option>Paraíba</option>
+    </select>
+    <select name="city" class="form-control">
+        <option>Curitiba</option>
+        <option>Rio de Janeiro</option>
+        <option>Fortaleza</option>
+        <option>Campo Largo</option>
+    </select>
     <input type="text" name="github">
     <button>Save</button>
 </form>
