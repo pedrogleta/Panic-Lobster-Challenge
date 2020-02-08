@@ -23,23 +23,6 @@
         <input type="number" name="CPF">
     </label>
     
-    <!-- <select name="state">
-        <option>Paraná</option>
-        <option>Rio de Janeiro</option>
-        <option>Ceará</option>
-        <option>Paraíba</option>
-    </select> -->
-    <% function changeCities(){
-        var Estado = $('#state').value;
-        var state = states.filter(state => state.Estado == Estado);
-        var uf = state[0].UF;
-        cities.forEach(function(city){
-            if (city.UF === uf){ %>
-                <option> <%= city.Município %> </option>
-            <% }
-        })
-    } %>
-
     <select name="state" id="state" onchange="changeCities()">
         <% states.forEach(function(state) {%>
         <option> <%= state.Estado %> </option>
