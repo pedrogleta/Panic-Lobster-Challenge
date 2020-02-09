@@ -38,7 +38,7 @@
 
         <div class="form-group col-md-6">
             <label for="inputCPF"> CPF </label>
-            <input id="inputCPF" class="form-control" type="text" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11}" name="cpf" placeholder="000.000.000-00" required>
+            <input id="inputCPF" class="form-control" type="text" id="cpf" name="cpf" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="000.000.000-00" maxlength="14" required>
         </div>
     </div>
 
