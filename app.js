@@ -70,6 +70,6 @@ app.post('/list/new', function(req, res){
     })
 })
 
-app.listen(3000, 'localhost', function(){
+app.listen(process.env.PORT, process.env.IP, function(){
     console.log('Server Started');
 });
