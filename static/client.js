@@ -1,15 +1,9 @@
-// var cpfRegEx = [/\d/,/\d{2}/,/\d{3}/,/\d{3}\./,
-//   /\d{3}\.\d/,/\d{3}\.\d{2}/,/\d{3}\.\d{3}/,/\d{3}\.\d{3}\./,
-//   /\d{3}\.\d{3}\.\d/,/\d{3}\.\d{3}\.\d{2}/,/\d{3}\.\d{3}\.\d{3}/,/\d{3}\.\d{3}\.\d{3}\-/,
-//   /\d{3}\.\d{3}\.\d{3}\-\d/,/\d{3}\.\d{3}\.\d{3}\-\d{2}/]
+var cpf = $('#inputCPF')[0];
 
-// function cpfToDigits(cpf){
-//   return cpf.replace('.','').replace('-','');
-// }
+cpf.onpaste = e => {e.preventDefault(); return false};
 
 //Gibberish that makes cpf field work for unknown reason
-$("#inputCPF")[0].addEventListener("keydown", function(event) {
-  var cpf = $('#inputCPF')[0];
+cpf.addEventListener("keydown", function(event) {
   if (event.keyCode == 8){
     if (cpf.value.length == 4){
       cpf.value = cpf.value.substring(0,cpf.value.length - 1);
@@ -49,11 +43,3 @@ function changeCities(){
 
 changeCities();
 
-//Blocks out of CPF format characters
-$('#cpf').keyup(function(e){
-  if (!(/\d/.test(this.value) || /-/.test(this.value) || /\./.test(this.value)))
-  {
-    // Filter non-digits from input value.
-    this.value = this.value.replace(/\D/g, '');
-  }
-});
