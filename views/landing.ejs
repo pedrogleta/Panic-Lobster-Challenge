@@ -1,6 +1,19 @@
 <%- include ('partials/header') %>
 
-<h1>Landing Page!</h1>
+<div class="container">
+
+<div class="container d-flex justify-content-center">
+<h1 class="border border-primary rounded">Register</h1>
+</div>
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">New Registration</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/list">List of Registrations</a>
+    </li>
+</ul>
 
 <form action="/list/new" method="POST">
     <label>
@@ -41,8 +54,9 @@
         <input type="url" name="github" placeholder="https://github.com/johnsmith" required>
     </label>
     
-    <button>Save</button>
+    <button class="btn btn-primary">Save</button>
 </form>
+</div>
 
 <script>
     var cities = <%- JSON.stringify(cities) %>;
