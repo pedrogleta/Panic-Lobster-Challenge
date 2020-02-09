@@ -5,4 +5,4 @@ var citySchema = new mongoose.Schema({
     Município: String
 });
 
-module.exports = mongoose.model("Playground", citySchema);
+module.exports = mongoose.model("Refcity", citySchema);

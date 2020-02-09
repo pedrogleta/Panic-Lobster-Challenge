@@ -12,6 +12,7 @@ app.set('view engine', 'ejs');
 
 var City = require('./models/city');
 var State = require('./models/state');
+var User = require('./models/user');
 
 // City.find({'Município': 'Guajará'}, function(err, cities){
 //     if (err){
@@ -42,13 +43,31 @@ app.get('/list/new', function(req, res){
 });
 
 app.get('/list', function(req, res){
-    res.render('list');
+    User.find({}, function(err, users){
+        if (err){
+            console.log(err);
+        } else {
+            res.render('list', {users: users})
+        }
+    })
 })
 
-app.post('/list', function(req, res){
-    var state = req.body.state,
-        city  = req.body.city;
-    res.redirect('/list')
+app.post('/list/new', function(req, res){
+    var name        = req.body.name,
+        email       = req.body.email,
+        birthdate   = req.body.birthdate,
+        cpf         = req.body.cpf,
+        state       = req.body.state,
+        city        = req.body.city,
+        github      = req.body.github;
+    var newUser = {name: name, email: email, birthdate: birthdate, cpf: cpf, state: state, city: city, github: github}
+    User.create(newUser, function(err, newlyCreated){
+        if (err){
+            console.log(err);
+        } else {
+            res.redirect('/list')
+        }
+    })
 })
 
 app.listen(3000, 'localhost', function(){

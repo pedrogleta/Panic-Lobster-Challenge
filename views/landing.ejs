@@ -2,8 +2,8 @@
 
 <div class="container">
 
-<div class="container d-flex justify-content-center">
-<h1 class="border border-primary rounded">Register</h1>
+<div class="container d-flex justify-content-center m-5 jumbotron">
+<h1 class="display-4">Register</h1>
 </div>
 
 <ul class="nav nav-pills">
@@ -38,14 +38,14 @@
 
         <div class="form-group col-md-6">
             <label for="inputCPF"> CPF </label>
-            <input id="inputCPF" class="form-control" type="text" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11}" name="CPF" placeholder="000.000.000-00" required>
+            <input id="inputCPF" class="form-control" type="text" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11}" name="cpf" placeholder="000.000.000-00" required>
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="state"> State </label>
-            <select id="state" class="form-control" name="state" onchange="changeCities()" required>
+            <select id="state" class="form-control" name="state" onchange="changeCities()">
                 <% states.forEach(function(state) {%>
                 <option> <%= state.Estado %> </option>
                 <% }); %>
@@ -54,7 +54,7 @@
 
         <div class="form-group col-md-6">
             <label for="city"> City </label>
-            <select id="city" class="form-control" name="city" required>
+            <select id="city" class="form-control" name="city">
                 <% cities.forEach(function(city) {
                     if (city.UF == 'RO') { %> 
                     <option> <%= city.Município %> </option> 
@@ -66,7 +66,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputGithub"> Github </label>
-            <input id="inputGithub" class="form-control" type="url" name="github" placeholder="https://github.com/johnsmith" required>
+            <input id="inputGithub" class="form-control" type="url" name="github" placeholder="https://github.com/johnsmith">
         </div>
     </div>
 
