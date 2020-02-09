@@ -1,5 +1,6 @@
 body{
     background: url('./background.jfif');
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 label{
@@ -9,7 +10,29 @@ label{
 h3{
     color: white;
 }
+
 td{
     max-width: 200px;
     word-wrap: break-word;
+}
+
+.jumbotron{
+    background-color: #ed008c;
+}
+
+#plbg{
+    background-color: #ed008c;
+}
+
+#plc{
+    color: #ed008c;
+}
+
+#plbtn{
+    background-color: #ed008c;
+    border-color: #ed008c;
+}
+
+.display-4{
+    color: white;
 }

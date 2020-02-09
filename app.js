@@ -70,6 +70,6 @@ app.post('/list/new', function(req, res){
     })
 })
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(80, process.env.IP, function(){
     console.log('Server Started');
 });
