@@ -1,3 +1,4 @@
+
 //Sets city options according to selected state
 function changeCities(){
     var Estado = $('select')[0].value;
@@ -15,6 +16,8 @@ function changeCities(){
         };
     })
 };
+
+changeCities();
 
 //Blocks out of CPF format characters
 $('#cpf').keyup(function(e){

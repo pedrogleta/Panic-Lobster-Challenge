@@ -46,7 +46,8 @@
         <div class="form-group col-md-6">
             <label for="state"> State </label>
             <select id="state" class="form-control" name="state" onchange="changeCities()">
-                <% states.forEach(function(state) {%>
+                <!-- Sorting States by Estado attribute in Alphabetical Order -->
+                <% states.sort((a, b) => (a.Estado > b.Estado) ? 1 : -1).forEach(function(state) {%>
                 <option> <%= state.Estado %> </option>
                 <% }); %>
             </select>
@@ -55,10 +56,6 @@
         <div class="form-group col-md-6">
             <label for="city"> City </label>
             <select id="city" class="form-control" name="city">
-                <% cities.forEach(function(city) {
-                    if (city.UF == 'RO') { %> 
-                    <option> <%= city.Município %> </option> 
-                <% }}); %>
             </select>
         </div>
     </div>
