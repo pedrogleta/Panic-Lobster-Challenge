@@ -1,8 +1,22 @@
+//Sets max date to today
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+} 
+if(mm<10){
+  mm='0'+mm
+} 
+today = yyyy+'-'+mm+'-'+dd;
+$('#inputBirthdate')[0].setAttribute("max", today);
+
+//Gibberish that makes cpf field work for unknown reason
 var cpf = $('#inputCPF')[0];
 
 cpf.onpaste = e => {e.preventDefault(); return false};
 
-//Gibberish that makes cpf field work for unknown reason
 cpf.addEventListener("keydown", function(event) {
   if (event.keyCode == 8){
     if (cpf.value.length == 4){
