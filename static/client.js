@@ -12,7 +12,7 @@ if(mm<10){
 today = yyyy+'-'+mm+'-'+dd;
 $('#inputBirthdate')[0].setAttribute("max", today);
 
-//Gibberish that makes cpf field work for unknown reason
+//Formats cpf input according to key pressed
 var cpf = $('#inputCPF')[0];
 
 cpf.onpaste = e => {e.preventDefault(); return false};

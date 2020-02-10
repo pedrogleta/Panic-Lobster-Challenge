@@ -14,14 +14,6 @@ var City = require('./models/city');
 var State = require('./models/state');
 var User = require('./models/user');
 
-// City.find({'Município': 'Guajará'}, function(err, cities){
-//     if (err){
-//         console.log(err);
-//     } else {
-//         console.log(cities);
-//     }
-// });
-
 app.get('/', function(req, res){
     res.redirect('/list/new');
 });
